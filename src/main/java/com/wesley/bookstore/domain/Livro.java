@@ -9,7 +9,7 @@ public class Livro implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @Id
+    @Id()
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String titulo;
@@ -17,7 +17,7 @@ public class Livro implements Serializable {
     private String texto;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "categoria_id")
     private Categoria categoria;
 
     public Livro() {
