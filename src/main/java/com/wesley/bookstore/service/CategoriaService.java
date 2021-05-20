@@ -1,6 +1,7 @@
 package com.wesley.bookstore.service;
 
 import com.wesley.bookstore.domain.Categoria;
+import com.wesley.bookstore.exceptions.ObjectNotFoundException;
 import com.wesley.bookstore.repositories.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,7 @@ public class CategoriaService {
 
     public Categoria findById(Integer id) {
         Optional<Categoria> obj = repository.findById(id);
-        return obj.orElse(null);
+        return obj.orElseThrow(() -> new ObjectNotFoundException(
+                "Objeto não encontrado! Id: " +id+ ", Tipo: " + Categoria.class.getName()));
     }
 }
