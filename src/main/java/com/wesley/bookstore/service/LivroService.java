@@ -1,5 +1,6 @@
 package com.wesley.bookstore.service;
 
+import com.wesley.bookstore.domain.Categoria;
 import com.wesley.bookstore.domain.Livro;
 import com.wesley.bookstore.exceptions.ObjectNotFoundException;
 import com.wesley.bookstore.repositories.LivroRepository;
@@ -39,5 +40,12 @@ public class LivroService {
         newObj.setTitulo(obj.getTitulo());
         newObj.setNomeAutor(obj.getNomeAutor());
         newObj.setTexto(obj.getTexto());
+    }
+
+    public Livro create(Integer id_cat, Livro obj) {
+        obj.setId(null);
+        Categoria  cat =  categoriaService.findById(id_cat);
+        obj.setCategoria(cat);
+        return repository.save(obj);
     }
 }
