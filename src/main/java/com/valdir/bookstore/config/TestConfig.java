@@ -1,6 +1,6 @@
 package com.valdir.bookstore.config;
 
-import com.valdir.bookstore.service.DBService;
+/*import com.valdir.bookstore.service.DBService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,4 +17,4 @@ public class TestConfig {
     public void instaciaBaseDeDados() {
         this.dbService.instaciaBaseDeDados();;
     }
-}
+}*/
