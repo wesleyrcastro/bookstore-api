@@ -1,5 +1,6 @@
 package com.valdir.bookstore.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -18,6 +19,7 @@ public class Livro implements Serializable {
     private String nomeAutor;
     private String texto;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
