@@ -3,8 +3,12 @@ package com.valdir.bookstore.dtos;
 import com.valdir.bookstore.domain.Categoria;
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class CategoriaDTO {
+public class CategoriaDTO implements Serializable {
+
+    private static final long serialVersionUID = 1l;
 
     private Integer id;
     private String nome;
